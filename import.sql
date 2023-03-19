@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 19, 2023 at 06:26 AM
+-- Generation Time: Mar 19, 2023 at 10:15 AM
 -- Server version: 10.5.16-MariaDB
 -- PHP Version: 7.3.32
 
@@ -32,7 +32,7 @@ CREATE TABLE `response` (
   `id` int(11) NOT NULL,
   `subject` varchar(255) NOT NULL,
   `question` varchar(255) NOT NULL,
-  `pattern` varchar(255) NOT NULL,
+  `pattern` varchar(10000) NOT NULL,
   `body` mediumtext NOT NULL,
   `active` varchar(10) NOT NULL DEFAULT 'Yes'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -77,7 +77,10 @@ INSERT INTO `response` (`id`, `subject`, `question`, `pattern`, `body`, `active`
 (60, 'Break Article Body', 'How to break my article?', 'How to could should would can I break my article articles story stories post posts break', 'Please follow the steps below:\n\n&#10102; Click on <b>Articles</b> icon from <b>Site Manager</b>.\n\n&#10103; Click <b>edit</b> on specific article.\n\n&#10104; Place <b>{{more}}</b> command in <b>Body</b> fields. You can place it after first paragraph.\n\n&#10105; Click on <b>submit</b>\n\nPlease review your site again to see the updated changes.', 'Yes'),
 (61, 'Enable Sharing Buttons in Article', 'How to show Sharing buttons in Article?', 'How to could should would can I How to could should would can I Facebook Twitter widget sharing share social media button buttons icon icons in on my article articles story stories post posts', 'Please follow the steps below:\n\n&#10102; Click on <b>Articles</b> icon from <b>Site Manager</b>.\n\n&#10103; Click <b>edit</b> on specific article.\n\n&#10104; Choose position in <b>Bookmark/Share Tools</b> field.\n\n&#10105; Click on <b>submit</b>\n\nPlease review your site again to see the updated changes.', 'Yes'),
 (62, 'Image Caption in Article', 'How to add Image Caption in Article?', 'How to could should would can I add adding create creating place placing a an the image images picture pictures photo photos caption captions text texts add adding create creating place placing', 'Please follow the steps below:\n\n&#10102; Click on <b>Articles</b> icon from <b>Site Manager</b>.\n\n&#10103; Click <b>edit</b> on specific article.\n\n&#10104; Write image caption in <b>Picture Caption (primary)</b> and <b>Picture Caption (secondary)\n</b> fields.\n\n&#10105; Click on <b>submit</b>\n\nPlease review your site again to see the updated changes.', 'Yes'),
-(63, 'Image Alignment in Article', 'How can I align Image in Article?', 'How to could should would can I align alignment move to left right center side set a an the my image images picture pictures align alignment move to left right center side photo photos in on a an the article articles story stories post posts', 'Please follow the steps below:\n\n&#10102; Click on <b>Articles</b> icon from <b>Site Manager</b>.\n\n&#10103; Click <b>edit</b> on specific article.\n\n&#10104; Choose alignment in <b>Picture Alignment</b> field.\n\n&#10105; Click on <b>submit</b>\n\nPlease review your site again to see the updated changes.', 'Yes');
+(63, 'Image Alignment in Article', 'How can I align Image in Article?', 'How to could should would can I align alignment move to left right center side set a an the my image images picture pictures align alignment move to left right center side photo photos in on a an the article articles story stories post posts', 'Please follow the steps below:\n\n&#10102; Click on <b>Articles</b> icon from <b>Site Manager</b>.\n\n&#10103; Click <b>edit</b> on specific article.\n\n&#10104; Choose alignment in <b>Picture Alignment</b> field.\n\n&#10105; Click on <b>submit</b>\n\nPlease review your site again to see the updated changes.', 'Yes'),
+(64, 'Article Sorting', 'How can I sort article under Site Manager?', 'How to could should would can I sort sorting order ordering arrange arranging article articles story stories post posts sort sorting order ordering arrange arranging in under admin control site manager panel', 'Please follow the steps below:\n\n&#10102; Click on <b>Articles</b> icon from <b>Site Manager</b>.\n\n&#10103; Click on <b>sort</b> from the top.\n\n&#10104; Select some sorting fields as per your requirement.\n\n&#10105; Click on <b>submit</b>', 'Yes'),
+(65, 'Sharing Article from Site Manager', 'How to share article from Site Manager?', 'How to could should would can I share sharing article articles story stories post posts on social media sites', 'Please follow the steps below:\n\n&#10102; Click on <b>Articles</b> icon from <b>Site Manager</b>.\n\n&#10103; Take mouse over <b>share</b> text in-front of any article.\n\n&#10104; It will display different sharing icons. Click on any icons to share this article.', 'Yes'),
+(66, 'Schedule Article', 'How do I schedule article to future date?', 'How to could should would do can I automatic automatically article articles story stories post posts schedule scheduling automatic automatically a an the article articles story stories post posts automatic automatically to future later date time automatic automatically', 'Please follow the steps below:\n\n&#10102; Click on <b>Articles</b> icon from <b>Site Manager</b>.\n\n&#10103; Click <b>edit</b> on article.\n\n&#10104; Set current date or any past date in <b>Issue Date</b> field.\n\n&#10105; Set future date in <b>Starting Date</b> field.\n\n&#10106; Click on <b>submit</b>.\n\nThis article will now automatically display on selected future date.', 'Yes');
 
 --
 -- Indexes for dumped tables
@@ -97,7 +100,7 @@ ALTER TABLE `response`
 -- AUTO_INCREMENT for table `response`
 --
 ALTER TABLE `response`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
