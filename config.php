@@ -6,7 +6,8 @@ $pwd = "password";
 $db = "chatbot";
 
 // set DSN
-$dsn = "mysql:host=$host;dbname=$db";
+//$dsn = "mysql:host=$host;dbname=$db";
+$dsn = "sqlsrv:Server=$host;Database=$db";
 
 // set attributes
 $options = [
