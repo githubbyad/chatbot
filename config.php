@@ -18,6 +18,6 @@ $options = [
 try {
     // create PDO instance
     $conn = new PDO($dsn, $user, $pwd, $options);
-} catch (PDOException $e) {
-    die($e->getMessage());
+} catch (PDOException $e) {    
+    die("Connection failed: " . $e->getMessage());
 }
