@@ -7,6 +7,7 @@ $input = file_get_contents("php://input");
 $values = json_decode($input);
 
 // get form values
+$category = trim($values->category);
 $subject = trim($values->subject);
 $pattern = trim($values->pattern);
 $question = trim($values->question);
@@ -14,9 +15,9 @@ $body = trim($values->body);
 $active = $values->active;
 
 // check if all fields are filled or not
-if ($subject != "" && $pattern != "" && $body != "" && $active != "") {
+if ($category != "" && $subject != "" && $pattern != "" && $body != "" && $active != "") {
     // insert data
-    $sql = $conn->prepare("INSERT INTO response(subject,question,pattern,body,active) VALUES('{$subject}','{$question}','{$pattern}','{$body}','{$active}')");
+    $sql = $conn->prepare("INSERT INTO response(category,subject,question,pattern,body,active) VALUES('{$category}','{$subject}','{$question}','{$pattern}','{$body}','{$active}')");
     if ($sql->execute()) {
         echo json_encode(["insert" => "success", "message" => "Data inserted"], JSON_PRETTY_PRINT);
     } else {
