@@ -34,18 +34,18 @@ html {
 }
 
 .search_id:hover {
-    background: #000;
-    transition: 200ms ease-in-out;
+    background: #ddd;
+    /*transition: 200ms ease-in-out;*/
 }
 
 .search_id:hover .search_subject {
-    color: white !important;
-    transition: 200ms ease-in-out;
+    /*color: white !important;*/
+    /*transition: 200ms ease-in-out;*/
 }
 
 .search_id:hover .search_questionx {
-    color: #8e8e8e !important;
-    transition: 200ms ease-in-out;
+    /*color: #8e8e8e !important;*/
+    /*transition: 200ms ease-in-out;*/
 }
 
 .modal-body,
@@ -74,7 +74,14 @@ a[title*="000webhost"] {
 .bg-theme {
     background-color: #fff !important;
 }
-
+.bot_chat code {
+	font-weight: bold;
+	background: #fff;
+	color: #333;
+	padding: 10px 0;
+	font-size: 1rem;
+	border: 1px dotted;
+}
 .text-theme {
     color: #0d64be !important;
 }
@@ -132,15 +139,16 @@ a[title*="000webhost"] {
 }
 
 .search_id .subjectSpan {
-    font-family: 'Oswald', sans-serif;
+    /*font-family: 'Oswald', sans-serif;*/
     display: block;
     margin-left: 0rem !important
 }
 
 .search_questionx {
-    font-family: 'Oswald', sans-serif;
+    /*font-family: 'Oswald', sans-serif;*/
     font-size: 0.9rem;
     color: gray !important;
+    font-weight:bold;
 }
 
 .formShadow {
@@ -148,7 +156,7 @@ a[title*="000webhost"] {
 }
 
 .search_id {
-    transition: 200ms ease-in-out;
+    /*transition: 200ms ease-in-out;*/
 }
 
 .initial {
@@ -269,6 +277,7 @@ a[title*="000webhost"] {
 
 .search_id {
     border-color: #000 !important;
+    position: relative;
 }
 
 .search_subject {
@@ -380,7 +389,49 @@ a[title*="000webhost"] {
 	color: gray;
 	line-height: 35px;
 }
+.close_boxes svg:hover {
+	background: black;
+}
+.search_questionx {
+  display: none;
+  position: absolute;
+  background: rgba(0,0,0,0.95);
+  padding: 10px !important;
+  border-radius: 10px;
+  left: 0;
+  opacity: 1;
+  bottom: calc(100% + 8px);
+  color: white !important;
+  text-align:center;
+}
+.search_questionx::before {
+	content: "";
+	position: absolute;
+	bottom: -16px;
+	color: black;
+	left: 50%;
+	border-color: rgba(0,0,0,0.95) transparent transparent transparent;
+	border-style: solid;
+	border-width: 8px;
+	transform: translateX(-50%);
+}
+
+.search_subject:hover ~ .search_questionx {
+  display: block;
+  transform:translateY(10px)
+}
+.chatLoaderPowered {
+	color: #dfdfdf;
+	margin-top: 5rem;
+	position: fixed;
+	bottom: 2%;
+	left: 50%;
+	transform: translateX(-50%);
+}
 @media only screen and (max-width: 900px) {
+    .search_id:hover .search_questionx {
+        display:none;   
+    }
     #loadData {
         max-height: 85vh;
         overflow: scroll;
