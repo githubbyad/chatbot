@@ -21,18 +21,23 @@ include "config.php";
         <div class="row mx-0">
             <div class="col-12 pb-4 px-lg-5 bg-light rounded">
                 <h1 class="fw-bold text-center my-3 border-bottom border-primary border-2 pb-2 text-primary">BL Chatbot - Responses</h1>
-                <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="searchData" placeholder="Search Data">
-                    <label for="floatingInput"><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-search' viewBox='0 0 16 16'>
-                            <path d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z' />
-                        </svg> Search Responses</label>
+                <div class="row" style="justify-content: space-around;">
+                    <div class="form-floating mb-3 col-lg-6 px-0">
+                        <input type="text" class="form-control" id="searchData" placeholder="Search Data">
+                        <label for="floatingInput">Search by pattern</label>
+                    </div>
+                    <div class="form-floating mb-3 col-lg-4 px-0">
+                        <input type="text" class="form-control" id="searchCategory" placeholder="Search by Category">
+                        <label for="floatingInput">Search by Category</label>
+                    </div>
+                    <button type="button" class="btn btn-success col-lg-1 mb-3 ms-lg-2" data-bs-toggle="modal" data-bs-target="#InsertModal">New</button>
                 </div>
-                <p class="text-end"><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#InsertModal">Add New</button></p>
                 <div class="alert alert-danger error-message d-none"></div>
                 <div class="alert alert-success success-message d-none"></div>
                 <table class="table table-primary table-striped table-bordered table-hover">
                     <thead>
                         <tr>
+                            <th scope="col" class="bg-primary text-light">Cateogry</th>
                             <th scope="col" class="bg-primary text-light">Subject</th>
                             <th scope="col" class="bg-primary text-light">Question</th>
                             <th scope="col" class="bg-primary text-light">Status</th>
@@ -57,6 +62,10 @@ include "config.php";
                 </div>
                 <div class="modal-body">
                     <form id="addResponse">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Category</label>
+                            <input type="text" class="form-control" id="category" placeholder="Category">
+                        </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Subject</label>
                             <input type="text" class="form-control" id="subject" placeholder="Subject">
@@ -96,6 +105,10 @@ include "config.php";
                 </div>
                 <div class="modal-body">
                     <form id="updateResponse">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Category</label>
+                            <input type="text" class="form-control" id="edit_category" placeholder="Category">
+                        </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Subject</label>
                             <input type="text" class="form-control" id="edit_subject" placeholder="Subject">
