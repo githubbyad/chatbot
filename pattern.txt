@@ -1,4 +1,4 @@
-How to could should would can I 
+How to do could should would can I 
 
 add adding create creating place placing
 
@@ -21,3 +21,5 @@ ad ads advertisement advertisements banner ad ads
 Please review your site again to see the updated changes.
 
 Please refer to <b>Quick Start</b> page from <b>Site Manager</b> to get...
+
+<code>  &lt;a href="https://google.com"&gt;Text to show&lt;/a&gt;  </code>
