@@ -52,9 +52,11 @@ setTimeout(() => {
 // loader
 setTimeout(() => {
   document.querySelector(".chatLoader").classList.add("chatHide");
+  document.querySelector(".chatLoaderPowered").classList.add("chatHide");
 },3000);
 setTimeout(() => {
   document.querySelector(".chatLoader").classList.add("d-none");
+  document.querySelector(".chatLoaderPowered").classList.add("d-none");
 },3500);
 setTimeout(() => {
   document.querySelector(".mainbody").classList.remove("invisible");
@@ -150,19 +152,19 @@ document.querySelector("#searchData").addEventListener("keyup", e => {
                 } else {
                     var output = "";
                     for (var i in data) {
-                        output += `<span class="search_id border border-1 border-light p-2 mb-1 rounded-3 d-inline-block" style="transform: scale(0.95);" onclick="showbody(${data[i].id})">
-                                        <p class="search_subject mb-0 text-light position-relative lh-sm" data-id="${data[i].id}"><span class="subjectSpan">${arrow_double}${data[i].subject}</span></p>
+                        output += `<span class="search_id border border-1 border-dark p-2 mb-2 me-2 rounded-3 d-inline-block" onclick="showbody(${data[i].id})">
+                                        <p class="search_subject mb-0 px-lg-3 text-light position-relative lh-sm" data-id="${data[i].id}"><span class="subjectSpan">${arrow_double}${data[i].subject}</span></p>
                                         <p class="search_questionx mb-0 ps-0 lh-sm" style="color:#555">${data[i].question}</p>
                                         <div class="search_body mb-0 d-none" data-id="${data[i].id}">${data[i].body}</div>
                                     </span>`;
                     }
                     document.querySelector("#loadData").innerHTML = "<p class='searchMeans pt-0'>Did you mean one of the following?</p>" + output;
                     if(document.querySelector("#loadData").childElementCount == 3) {
-                        document.querySelector("#loadData").children[1].classList.add("col-lg-6");
-                        document.querySelector("#loadData").children[2].classList.add("col-lg-6");
+                        //document.querySelector("#loadData").children[1].classList.add("col-lg-6");
+                        //document.querySelector("#loadData").children[2].classList.add("col-lg-6");
                     } else if(document.querySelector("#loadData").childElementCount == 2) {
                         document.querySelector("#loadData").children[0].classList.add("d-none");
-                        document.querySelector("#loadData").children[1].classList.add("col-lg-12");
+                        //document.querySelector("#loadData").children[1].classList.add("col-lg-12");
                     }
                 }
             })
