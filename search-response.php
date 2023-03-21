@@ -7,12 +7,13 @@ $search = trim($_GET['search']);
 // remove some string
 $search = str_replace("?","",$search);
 $search = str_replace("'","",$search);
+$search = str_replace(",","",$search);
 
 // replace space with %
 $search = str_replace(" ","%",$search);
 
 // run query
-$sql = $conn->prepare("SELECT * FROM response WHERE pattern LIKE '%{$search}%' AND active = 'Yes' ORDER BY subject LIMIT 15");
+$sql = $conn->prepare("SELECT * FROM response WHERE pattern LIKE '%{$search}%' AND active = 'Yes' ORDER BY subject LIMIT 20");
 $sql->execute();
 $result = $sql->fetchAll();
 
