@@ -23,6 +23,7 @@ include "config.php";
         </div>
         <div class="chatLoaderText">&nbsp;</div>
     </div>
+    <div class="chatLoaderPowered">Powered by <b>Bulletlink</b></div>
     <!--header-->
     <div class="mainbody invisible">
         <div class="searchHeader">
@@ -51,7 +52,7 @@ include "config.php";
                     </p>
                     <div id="loadData" class="rowg-2"></div>
                     <div id="formDiv" class="form-floatingx mb-0">
-                        <input type="text" class="form-control text-start py-3 fw-bold" id="searchData" placeholder="Write your request here..." style="color:#404a60;" autofocus>
+                        <input type="text" class="form-control text-start py-3 fw-bold" id="searchData" placeholder="What are you looking for?" style="color:#404a60;" autofocus>
                     </div>
                     <label for="floatingInput" class="poweredLine text-muted text-center w-100 lh-base fw-bold py-1 d-none"><small>Powered by <a href="https://bulletlink.com/" class="text-theme text-decoration-none" target="_blank">Bulletlink</a></small></label>
                 </div>
