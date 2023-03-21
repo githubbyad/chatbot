@@ -8,6 +8,7 @@ $values = json_decode($input);
 
 // get form values
 $id = $values->id;
+$category = trim($values->category);
 $subject = trim($values->subject);
 $question = trim($values->question);
 $pattern = trim($values->pattern);
@@ -18,7 +19,8 @@ $active = $values->active;
 if ($subject != "" && $question != "" && $pattern != "" && $body != "" && $active != "") {
     // run query
     $sql = $conn->prepare("UPDATE response 
-                            SET subject = '{$subject}', 
+                            SET category = '{$category}', 
+                                subject = '{$subject}', 
                                 question = '{$question}', 
                                 pattern = '{$pattern}', 
                                 body = '{$body}', 
